@@ -1,0 +1,74 @@
+.footer {
+  display: flex;
+  margin-top: 100px;
+}
+
+.footer .contacts {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+.footer .contacts .contacts-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+}
+
+.footer .contacts .phone {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 130%;
+}
+
+.footer .contacts .social-networks {
+  display: flex;
+  margin-top: 30px;
+}
+.footer .contacts .social-networks .instagram,
+.footer .contacts .social-networks .whatsapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.footer .contacts .social-networks .instagram p,
+.footer .contacts .social-networks .whatsapp p {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.footer .contacts-info {
+  flex: 1 1 40%;
+  color: #000000;
+}
+
+.footer .contacts-info .adress-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+}
+
+.footer .contacts-info .adress {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 130%;
+  margin-top: 25px;
+}
+
+.footer .contacts-info .work-schedule-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  margin-top: 20px;
+}
+
+.footer .contacts-info .work-schedule {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+}
