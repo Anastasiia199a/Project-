@@ -1,31 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import './Instruments.css';
-import { instruments as instrumentsArr } from '../../data/instruments';
+import { getAllProducts } from '../../API/categories_api';
 import InstrumentItem from './InstrumentItem';
 
 function Instruments() {
-  const [instruments, setInstruments] = useState(instrumentsArr);
+  const [instruments, setInstruments] = useState([]);
+  const [filteredInstruments, setFilteredInstruments] = useState([]);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [discountFilter, setDiscountFilter] = useState(false);
   const [sort, setSort] = useState('default');
 
   useEffect(() => {
+    getAllProducts().then((products) => {
+      setInstruments(products);
+      setFilteredInstruments(products);
+    });
+  }, []);
+
+  useEffect(() => {
     if (!from && !to) {
-      setInstruments(instrumentsArr);
+      setFilteredInstruments(instruments);
     } else if (from && !to) {
-      setInstruments(
-        instrumentsArr.filter((instrument) => instrument.newPrice >= from)
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.discont_price >= from)
       );
     } else if (to && !from) {
-      setInstruments(
-        instrumentsArr.filter((instrument) => instrument.newPrice <= to)
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.discont_price <= to)
       );
     } else {
-      setInstruments(
-        instrumentsArr.filter(
+      setFilteredInstruments(
+        instruments.filter(
           (instrument) =>
-            instrument.newPrice >= from && instrument.newPrice <= to
+            instrument.discont_price >= from && instrument.discont_price <= to
         )
       );
     }
@@ -33,31 +41,31 @@ function Instruments() {
 
   useEffect(() => {
     if (discountFilter) {
-      setInstruments(
-        instrumentsArr.filter((instrument) => instrument.discount)
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.discont_price)
       );
     } else {
-      setInstruments(instrumentsArr);
+      setFilteredInstruments(instruments);
     }
   }, [discountFilter]);
 
   useEffect(() => {
     if (sort === 'az') {
-      setInstruments(
-        [...instrumentsArr].sort((a, b) => (a.title > b.title ? 1 : -1))
+      setFilteredInstruments(
+        [...instruments].sort((a, b) => (a.title > b.title ? 1 : -1))
       );
     } else if (sort === 'za') {
-      setInstruments(
-        [...instrumentsArr].sort((a, b) => (a.title > b.title ? -1 : 1))
+      setFilteredInstruments(
+        [...instruments].sort((a, b) => (a.title > b.title ? -1 : 1))
       );
     } else {
-      setInstruments(instrumentsArr);
+      setFilteredInstruments(instruments);
     }
   }, [sort]);
 
   return (
     <>
-      <h2 class="instruments-title">Инструменты и инвентарь</h2>
+      <h2 className="instruments-title">Инструменты и инвентарь</h2>
       <div className="navigation">
         <div className="range">
           <p className="price">Цена</p>
@@ -89,7 +97,7 @@ function Instruments() {
         <div className="sort">
           <p className="sort-item">Сортировать:</p>
           <select
-            class="select-sort"
+            className="select-sort"
             name="product-sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
@@ -101,10 +109,10 @@ function Instruments() {
         </div>
       </div>
       <div className="instruments">
-        {!instruments.length ? (
+        {!filteredInstruments.length ? (
           <p>Не найдено ни одного товара по вашему критерию</p>
         ) : (
-          instruments.map((instrument) => (
+          filteredInstruments.map((instrument) => (
             <InstrumentItem key={instrument.id} instrument={instrument} />
           ))
         )}

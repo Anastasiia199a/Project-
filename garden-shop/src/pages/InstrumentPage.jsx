@@ -1,17 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer/Footer';
-import { instruments as instrumentsArr } from '../data/instruments';
+import { getProductById } from '../API/categories_api';
 import { GardenContext } from '../context/Context';
 import { addToCart } from '../reducer/gardenReducer';
+import { getDiscount } from '../utils/getDiscount';
 
 function InstrumentPage() {
   let { id: productId } = useParams();
   const [, dispatch] = useContext(GardenContext);
-  const product = instrumentsArr.find(
-    (instrument) => instrument.id === Number(productId)
-  );
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    getProductById(productId).then((product) => setProduct(product));
+  }, []);
+
+  if (!product) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div>
       <Header />
@@ -21,19 +29,26 @@ function InstrumentPage() {
         </div>
         <div className="instrument-content">
           <div className="instrument-image">
-            <img src={`/images/${product.image}`} alt={product.title} />
+            <img
+              src={`http://localhost:3333/${product.image}`}
+              alt={product.title}
+            />
           </div>
           <div className="instrument-contnet">
             <div className="prices">
-              <p className="new-price">{product.newPrice}</p>
-              <p className="old-price">
-                {product.oldPrice ? '$' : ''}
-                {product.oldPrice}
+              {product.discont_price && (
+                <p className="new-price">{product.discont_price}</p>
+              )}
+              <p className={product.discont_price ? 'old-price' : 'new-price'}>
+                {product.price ? '$' : ''}
+                {product.price}
               </p>
-              <p className="discount">
-                {product.discount}
-                {product.discount ? '%' : ''}
-              </p>
+              {product.discont_price && (
+                <p className="discount">
+                  {getDiscount(product)}
+                  {getDiscount(product) ? '%' : ''}
+                </p>
+              )}
             </div>
             <button
               className="basket"

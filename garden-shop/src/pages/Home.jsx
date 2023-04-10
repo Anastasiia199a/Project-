@@ -5,6 +5,7 @@ import Categories from '../components/Categories/Categories';
 import { toast } from 'react-toastify';
 import { savePhoneNumber as savePhoneNumberAction } from '../reducer/gardenReducer';
 import { GardenContext } from '../context/Context';
+import { sendSale } from '../API/categories_api';
 
 const notify = () =>
   toast(`📱 скидка оформлена`, {
@@ -22,9 +23,11 @@ function Home() {
   const [phone, setPhone] = useState('');
 
   function savePhoneNumber() {
-    dispatch(savePhoneNumberAction(phone));
-    notify();
-    setPhone('');
+    sendSale({ phone }).then(() => {
+      dispatch(savePhoneNumberAction(phone));
+      notify();
+      setPhone('');
+    });
   }
 
   return (

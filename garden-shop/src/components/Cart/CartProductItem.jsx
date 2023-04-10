@@ -36,7 +36,10 @@ function CartProductItem({ cartItem }) {
         x
       </button>
       <div className="cart-item-iamge">
-        <img src={`/images/${cartItem.image}`} alt={cartItem.title} />
+        <img
+          src={`http://localhost:3333/${cartItem.image}`}
+          alt={cartItem.title}
+        />
       </div>
       <div className="description">
         <p>{cartItem.description}</p>
@@ -47,10 +50,12 @@ function CartProductItem({ cartItem }) {
         </div>
       </div>
       <div className="cart-item-prices">
-        <p className="new-price">{cartItem.newPrice}</p>
-        <p className="old-price">
-          {cartItem.oldPrice ? '$' : ''}
-          {cartItem.oldPrice}
+        {cartItem.discont_price && (
+          <p className="new-price">{cartItem.discont_price}</p>
+        )}
+        <p className={cartItem.discont_price ? 'old-price' : 'new-price'}>
+          {cartItem.price ? '$' : ''}
+          {cartItem.price}
         </p>
       </div>
     </div>

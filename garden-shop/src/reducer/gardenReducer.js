@@ -160,8 +160,10 @@ export const gardenReducer = (state = initialState, action) => {
 };
 
 function calculateTotalPrice(cart) {
-  return cart.reduce(
-    (acc, cartItem) => acc + cartItem.count * cartItem.newPrice,
-    0
-  );
+  return cart.reduce((acc, cartItem) => {
+    if (cartItem.discont_price) {
+      return acc + cartItem.count * cartItem.discont_price;
+    }
+    return acc + cartItem.count * cartItem.price;
+  }, 0);
 }

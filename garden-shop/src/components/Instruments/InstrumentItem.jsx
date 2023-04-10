@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { GardenContext } from '../../context/Context';
 import { addToCart } from '../../reducer/gardenReducer';
 import { toast } from 'react-toastify';
+import { getDiscount } from '../../utils/getDiscount';
 
 const notify = (instrumentName) =>
   toast(`${instrumentName} успешно добавлены в корзину`, {
@@ -12,7 +13,7 @@ const notify = (instrumentName) =>
     autoClose: 5000,
     closeOnClick: true,
     draggable: true,
-    pauseOnHover: true
+    pauseOnHover: true,
   });
 
 function InstrumentItem({ instrument }) {
@@ -34,7 +35,7 @@ function InstrumentItem({ instrument }) {
     >
       <div className="instrument-image">
         <img
-          src={`/images/${instrument.image}`}
+          src={`http://localhost:3333/${instrument.image}`}
           alt={instrument.title}
           onClick={() => navigate(`/instrument/${instrument.id}`)}
         />
@@ -47,15 +48,22 @@ function InstrumentItem({ instrument }) {
         </button>
       </div>
       <p>
-        <span className="new-price">{instrument.newPrice}</span>
-        <span className="old-price">
-          {instrument.oldPrice ? '$' : ''}
-          {instrument.oldPrice}
+        {instrument.discont_price && (
+          <span className="new-price">
+            {instrument.discont_price ? '$' : ''}
+            {instrument.discont_price}
+          </span>
+        )}
+        <span className={instrument.discont_price ? 'old-price' : 'new-price'}>
+          {instrument.price ? '$' : ''}
+          {instrument.price}
         </span>
-        <span className="discount">
-          {instrument.discount}
-          {instrument.discount ? '%' : ''}
-        </span>
+        {instrument.discont_price && (
+          <span className="discount">
+            {getDiscount(instrument)}
+            {getDiscount(instrument) ? '%' : ''}
+          </span>
+        )}
       </p>
       <p>{instrument.title}</p>
     </div>

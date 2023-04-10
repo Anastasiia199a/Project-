@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Categories.css';
 import { useNavigate } from 'react-router-dom';
-import { categories as categoriesArr } from '../../data/categories';
+import { getAllCategories } from '../../API/categories_api';
 
 function Categories({ isShort }) {
-  const [categories, setCategories] = useState(categoriesArr);
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isShort) {
-      setCategories(categories.slice(0, 4));
-    }
+    getAllCategories().then((categories) => {
+      if (isShort) {
+        setCategories(categories.slice(0, 4));
+      } else {
+        setCategories(categories);
+      }
+    });
   }, []);
 
   function handleNavigate() {
@@ -37,7 +41,10 @@ function Categories({ isShort }) {
             className="category-item"
             onClick={() => navigate('/instruments')}
           >
-            <img src={`/images/${category.image}`} alt={category.title} />
+            <img
+              src={`http://localhost:3333/${category.image}`}
+              alt={category.title}
+            />
             <p>{category.title}</p>
           </div>
         ))}

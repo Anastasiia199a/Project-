@@ -5,6 +5,7 @@ import CartProducts from './CartProducts';
 import { GardenContext } from '../../context/Context';
 import { clearCart, savePhoneNumber } from '../../reducer/gardenReducer';
 import { toast } from 'react-toastify';
+import { sendOrder } from '../../API/categories_api';
 
 const notify = () =>
   toast('Заказ в обработке! Спасибо!', {
@@ -24,9 +25,12 @@ function Cart() {
 
   function handleOnSubmit(e) {
     e.preventDefault();
-    dispatch(savePhoneNumber(phone));
-    notify();
-    dispatch(clearCart());
+
+    sendOrder({ phone, totalPrice }).then(() => {
+      dispatch(savePhoneNumber(phone));
+      notify();
+      dispatch(clearCart());
+    });
   }
 
   return (
@@ -53,7 +57,7 @@ function Cart() {
             <h4>Детали заказа</h4>
             <div className="cart-info-sum">
               <p className="total-price-desc">Cумма</p>
-              <p className="total-price">{totalPrice}</p>
+              <p className="total-price">${totalPrice}</p>
             </div>
             <form onSubmit={handleOnSubmit}>
               <input
