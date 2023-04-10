@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+
+  function handleNavigate() {
+    navigate('/home');
+  }
+
   return (
     <div class="header">
-      <div class="logo">
+      <div class="logo" onClick={handleNavigate}>
         <img src="./images/logo.png" alt="logo" />
         <button class="catalog">Каталог</button>
       </div>

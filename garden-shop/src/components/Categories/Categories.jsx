@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Categories.css';
+import { useNavigate } from 'react-router-dom';
+import { categories as categoriesArr } from '../../data/categories';
 
-function Categories() {
+function Categories({ isShort }) {
+  const [categories, setCategories] = useState(categoriesArr);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isShort) {
+      setCategories(categories.slice(0, 4));
+    }
+  }, []);
+
+  function handleNavigate() {
+    navigate('/categories');
+  }
+
   return (
     <div class="categories">
       <div class="categories-header">
         <h2>Категории</h2>
-        <button class="categories-btn">Все категории</button>
+        {isShort && (
+          <button onClick={handleNavigate} class="categories-btn">
+            Все категории
+          </button>
+        )}
       </div>
       <div class="categories-images">
-        <div class="category-item">
-          <img src="./images/img_1.png" alt="Удобрения" />
-          <p>Удобрения</p>
-        </div>
-        <div class="category-item">
-          <img src="./images/img_2.png" alt="Средства Защиты и септики" />
-          <p>Средства Защиты и септики</p>
-        </div>
-        <div class="category-item">
-          <img src="./images/img_3.png" alt="Посадочный материал" />
-          <p>Посадочный материал</p>
-        </div>
-        <div class="category-item">
-          <img src="./images/img_4.png" alt="Инструменты и Инвентарь" />
-          <p>Инструменты и Инвентарь</p>
-        </div>
+        {categories.map((category) => (
+          <div key={category.id} class="category-item">
+            <img src={`/images/${category.image}`} alt={category.title} />
+            <p>{category.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

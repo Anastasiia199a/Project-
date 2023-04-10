@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer/Footer';
 import Categories from '../components/Categories/Categories';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   return (
@@ -24,7 +25,7 @@ function Home() {
       </section>
 
       <section id="category" class="category-wrapper">
-        <Categories />
+        <Categories isShort={true} />
         <div class="advertising">
           <div class="advertising-image">
             <img src="./images/dwarf.png" alt="dwarf" />
