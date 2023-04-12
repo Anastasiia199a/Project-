@@ -18,18 +18,22 @@ function Categories({ isShort }) {
   }
 
   return (
-    <div class="categories">
-      <div class="categories-header">
+    <div className="categories">
+      <div className="categories-header">
         <h2>Категории</h2>
         {isShort && (
-          <button onClick={handleNavigate} class="categories-btn">
+          <button onClick={handleNavigate} className="categories-btn">
             Все категории
           </button>
         )}
       </div>
-      <div class="categories-images">
+      <div className="categories-images">
         {categories.map((category) => (
-          <div key={category.id} class="category-item">
+          <div
+            key={category.id}
+            className="category-item"
+            onClick={() => navigate('/instruments')}
+          >
             <img src={`/images/${category.image}`} alt={category.title} />
             <p>{category.title}</p>
           </div>

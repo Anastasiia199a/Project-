@@ -9,13 +9,13 @@ function Header() {
   }
 
   return (
-    <div class="header">
-      <div class="logo" onClick={handleNavigate}>
+    <div className="header">
+      <div className="logo" onClick={handleNavigate}>
         <img src="./images/logo.png" alt="logo" />
-        <button class="catalog">Каталог</button>
+        <button className="catalog">Каталог</button>
       </div>
-      <div class="menu-wrapper">
-        <ul class="menu">
+      <div className="menu-wrapper">
+        <ul className="menu">
           <li>
             <a href="#category">Категории</a>
           </li>
@@ -27,7 +27,7 @@ function Header() {
             <a href="#contacts">Контакты</a>
           </li>
         </ul>
-        <img class="cart" src="./images/icons/card.svg" alt="cart" />
+        <img className="cart" src="./images/icons/card.svg" alt="cart" />
       </div>
     </div>
   );

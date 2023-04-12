@@ -1,7 +1,13 @@
 import React from 'react';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
+
 import Home from './pages/Home';
 import CategoriesPage from './pages/CategoriesPage';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import InstrumentsPage from './pages/Instruments';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,6 +18,14 @@ function App() {
     {
       path: '/categories',
       element: <CategoriesPage />,
+    },
+    {
+      path: '/instruments',
+      element: <InstrumentsPage />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/home" replace />,
     },
   ]);
 
