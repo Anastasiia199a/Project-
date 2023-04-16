@@ -269,7 +269,7 @@
 }
 
 .contacts {
-  position: absolute;
+position: absolute;
 width: 209px;
 height: 52px;
 left: 30px;
@@ -342,3 +342,6 @@ font-weight: 700;
 font-size: 25px;
 line-height: 130%;
 }
+
+
+

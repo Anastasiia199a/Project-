@@ -240,3 +240,78 @@
 }
 
 /* section 3 - end */
+
+/* section 4 - start */
+.navigation{
+  display: flex;
+  margin-left: 10px;
+ }
+ 
+ .range{
+ width: 103px;
+ height: 42px;
+ left: 102px;
+ top: 303px;
+ 
+ border: 1px solid #000000;
+ border-radius: 7px;
+ }
+ .discount{
+   width: 215px;
+ height: 26px;
+ left: 363px;
+ top: 311px;
+ 
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 600;
+ font-size: 20px;
+ line-height: 130%;
+ }
+ 
+ .sort{
+ box-sizing: border-box;
+ width: 40px;
+ height: 40px;
+ left: 593px;
+ top: 304px;
+ 
+ border: 1px solid #000000;
+ border-radius: 7px;
+ }
+ .instruments .instrument-item img {
+   width: 100%;
+   display: block;
+   height: 100%;
+ }
+ 
+ .instruments .instrument-item p{
+   margin-top: 20px;
+ }
+ 
+ .instruments .instrument-item .new-price{
+   font-weight: 600;
+   font-size: 30px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+ }
+ 
+ .instruments .instrument-item .old-price{
+   font-size: 20px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+   text-decoration-line: line-through;
+   color: #8b8b8b;
+   margin-left: 15px;
+ }
+ 
+ .instruments .instrument-item .discount{
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+   color: #ff32a1;
+   margin-left: 15px;
+ }
+ 
+/* section 4 - end */
