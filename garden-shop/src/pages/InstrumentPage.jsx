@@ -31,9 +31,9 @@ function InstrumentPage() {
               {product.discount ? '%' : ''}
             </span>
           </p>
-          <button>В корзину</button>
-          <p>Описание</p>
-          <p>{product.description}</p>
+          <button className='basket'>В корзину</button>
+          <p className='description'>Описание</p>
+          <p className='product-description'>{product.description}</p>
         </div>
       </div>
       <Footer />
