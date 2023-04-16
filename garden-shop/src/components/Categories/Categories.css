@@ -1,11 +1,11 @@
 .categories {
-  padding: 40px 30px;
+  flex: 1 1 50%;
 }
 
 .categories-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 15px 30px 20px 30px;
 }
 
 .categories-header h2 {
@@ -44,9 +44,9 @@
 }
 
 .categories-images .category-item img {
-  width: 100%;
+  width: 70%;
   display: block;
-  height: 100%;
+  height: 70%;
 }
 
 .categories-images .category-item p {

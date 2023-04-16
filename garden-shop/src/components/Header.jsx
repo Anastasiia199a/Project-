@@ -19,9 +19,11 @@ function Header() {
           <li>
             <a href="#category">Категории</a>
           </li>
-          <li>Купоны</li>
           <li>
-            <a href="#promotions">Акции</a>
+            <a href="#kupons">Купоны</a>
+          </li>
+          <li>
+            <a href="#shares">Акции</a>
           </li>
           <li>
             <a href="#contacts">Контакты</a>

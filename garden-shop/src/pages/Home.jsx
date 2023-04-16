@@ -30,7 +30,7 @@ function Home() {
           <div className="advertising-image">
             <img src="./images/dwarf.png" alt="dwarf" />
           </div>
-          <div className="advertising-info">
+          <div className="advertising-info" id="kupons">
             <h1>Скидка 5%</h1>
             <h2>на первый заказ</h2>
             <input type="text" placeholder="+380" />

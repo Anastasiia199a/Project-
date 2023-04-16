@@ -111,9 +111,16 @@
 /* section 1 - end */
 
 /* section 2 - start */
+.category-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
 .advertising {
+  flex: 1 1 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
 }
 
@@ -123,8 +130,10 @@
 }
 
 .advertising-image img {
-  margin: 27px auto;
+  margin: 0 auto;
   display: block;
+  width: 50%;
+  height: 75%;
 }
 
 .advertising-info {
@@ -138,13 +147,13 @@
 
 .advertising-info h1 {
   font-weight: 700;
-  font-size: 90px;
+  font-size: 70px;
   line-height: 120%;
   letter-spacing: 0.03em;
 }
 
 .advertising-info h2 {
-  font-size: 53px;
+  font-size: 38px;
 }
 
 .advertising-info input {
@@ -153,9 +162,9 @@
   border: 0;
   border-radius: 25px;
   width: 100%;
-  max-width: 433px;
+  max-width: 380px;
   padding: 20px;
-  margin: 46px 0 20px;
+  margin: 20px 0 20px;
 }
 
 .advertising-info button {
@@ -168,21 +177,17 @@
   font-weight: 700;
   letter-spacing: 1px;
   width: 100%;
-  max-width: 473px;
+  max-width: 423px;
 }
 
 /* section 2 - end */
 
 /* section 3 - start */
 
-.shares-wrapper {
-  padding: 49px 30px;
-}
-
 .shares-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 30px;
 }
 
 .shares-header h2 {
@@ -196,6 +201,7 @@
 .shares-images {
   display: flex;
   flex-wrap: nowrap;
+  margin-left: 30px;
 }
 
 .shares-images .shares-item {
@@ -205,9 +211,9 @@
 }
 
 .shares-images .shares-item img {
-  width: 100%;
+  width: 70%;
   display: block;
-  height: 100%;
+  height: 70%;
 }
 
 .shares-images .shares-item p {
@@ -242,76 +248,75 @@
 /* section 3 - end */
 
 /* section 4 - start */
-.navigation{
+.navigation {
   display: flex;
   margin-left: 10px;
- }
- 
- .range{
- width: 103px;
- height: 42px;
- left: 102px;
- top: 303px;
- 
- border: 1px solid #000000;
- border-radius: 7px;
- }
- .discount{
-   width: 215px;
- height: 26px;
- left: 363px;
- top: 311px;
- 
- font-family: 'Montserrat';
- font-style: normal;
- font-weight: 600;
- font-size: 20px;
- line-height: 130%;
- }
- 
- .sort{
- box-sizing: border-box;
- width: 40px;
- height: 40px;
- left: 593px;
- top: 304px;
- 
- border: 1px solid #000000;
- border-radius: 7px;
- }
- .instruments .instrument-item img {
-   width: 100%;
-   display: block;
-   height: 100%;
- }
- 
- .instruments .instrument-item p{
-   margin-top: 20px;
- }
- 
- .instruments .instrument-item .new-price{
-   font-weight: 600;
-   font-size: 30px;
-   line-height: 130%;
-   letter-spacing: 0.03em;
- }
- 
- .instruments .instrument-item .old-price{
-   font-size: 20px;
-   line-height: 130%;
-   letter-spacing: 0.03em;
-   text-decoration-line: line-through;
-   color: #8b8b8b;
-   margin-left: 15px;
- }
- 
- .instruments .instrument-item .discount{
-   font-weight: 600;
-   font-size: 20px;
-   line-height: 130%;
-   letter-spacing: 0.03em;
-   color: #ff32a1;
-   margin-left: 15px;
- }
- 
+}
+
+.range {
+  width: 103px;
+  height: 42px;
+  left: 102px;
+  top: 303px;
+
+  border-radius: 7px;
+}
+.discount {
+  width: 215px;
+  height: 26px;
+  left: 363px;
+  top: 311px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.sort {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  left: 593px;
+  top: 304px;
+
+  border: 1px solid #000000;
+  border-radius: 7px;
+}
+.instruments .instrument-item img {
+  width: 70%;
+  display: block;
+  height: 70%;
+}
+
+.instruments .instrument-item p {
+  margin-top: 20px;
+}
+
+.instruments .instrument-item .new-price {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+}
+
+.instruments .instrument-item .old-price {
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-decoration-line: line-through;
+  color: #8b8b8b;
+  margin-left: 15px;
+}
+
+.instruments .instrument-item .discount {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #ff32a1;
+  margin-left: 15px;
+}
+
 /* section 4 - end */
