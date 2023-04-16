@@ -242,7 +242,6 @@
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #ff32a1;
-  margin-left: 15px;
 }
 
 /* section 3 - end */
@@ -267,7 +266,7 @@
   left: 363px;
   top: 311px;
 
-  font-family: 'Montserrat';
+
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
