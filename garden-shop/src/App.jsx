@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home';
 import CategoriesPage from './pages/CategoriesPage';
 import InstrumentsPage from './pages/Instruments';
+import InstrumentPage from './pages/InstrumentPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ function App() {
     {
       path: '/instruments',
       element: <InstrumentsPage />,
+    },
+    {
+      path: '/instrument/:id',
+      element: <InstrumentPage />,
     },
     {
       path: '*',

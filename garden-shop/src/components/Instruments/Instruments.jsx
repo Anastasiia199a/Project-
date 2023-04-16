@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Instruments.css';
 import { instruments as instrumentsArr } from '../../data/instruments';
+import { useNavigate } from 'react-router-dom';
 
 function Instruments() {
   const [instruments, setInstruments] = useState(instrumentsArr);
@@ -8,6 +9,7 @@ function Instruments() {
   const [to, setTo] = useState('');
   const [discountFilter, setDiscountFilter] = useState(false);
   const [sort, setSort] = useState('default');
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!from && !to) {
@@ -99,7 +101,11 @@ function Instruments() {
           <p>Не найдено ни одного товара по вашему критерию</p>
         ) : (
           instruments.map((instrument) => (
-            <div key={instrument.id} className="instrument-item">
+            <div
+              key={instrument.id}
+              className="instrument-item"
+              onClick={() => navigate(`/instrument/${instrument.id}`)}
+            >
               <img src={`/images/${instrument.image}`} alt={instrument.title} />
               <p>
                 <span className="new-price">{instrument.newPrice}</span>

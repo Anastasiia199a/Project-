@@ -13,5 +13,6 @@
 }
 
 .instrument-item {
+  cursor: pointer;
   flex: 1 1 25%;
 }
