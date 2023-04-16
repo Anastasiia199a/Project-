@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range {
+  display: flex;
+}
+
+.instruments {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.instrument-item {
+  flex: 1 1 25%;
+}
