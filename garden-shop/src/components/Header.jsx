@@ -1,18 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Header() {
   const navigate = useNavigate();
 
-  function handleNavigate() {
-    navigate('/home');
-  }
-
   return (
     <div className="header">
-      <div className="logo" onClick={handleNavigate}>
-        <img src="./images/logo.png" alt="logo" />
-        <button className="catalog">Каталог</button>
+      <div className="logo">
+        <img
+          onClick={() => navigate('/home')}
+          src="./images/logo.png"
+          alt="logo"
+        />
+        <button onClick={() => navigate(`/instruments`)} className="catalog">
+          Каталог
+        </button>
       </div>
       <div className="menu-wrapper">
         <ul className="menu">
@@ -29,7 +31,9 @@ function Header() {
             <a href="#contacts">Контакты</a>
           </li>
         </ul>
-        <img className="cart" src="./images/icons/card.svg" alt="cart" />
+        <Link to="/cart">
+          <img className="cart" src="./images/icons/card.svg" alt="cart" />
+        </Link>
       </div>
     </div>
   );

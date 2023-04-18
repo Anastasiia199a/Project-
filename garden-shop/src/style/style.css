@@ -266,7 +266,6 @@
   left: 363px;
   top: 311px;
 
-
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -322,118 +321,90 @@
 
 /* section 5 - start */
 
-.instrument-title{
+.instrument-content {
+  display: flex;
+}
+.instrument-image {
+  flex: 1 1 60%;
+}
+.instrument-contnet {
+  flex: 1 1 40%;
+}
+
+.instrument-title {
   font-weight: 500;
   font-size: 25px;
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #000000;
- 
 }
 
-.new-price{
-position: relative;
-width: 185px;
-height: 41px;
-left: 945px;
-top: 3px;
-
-font-weight: 600;
-font-size: 70px;
-line-height: 130%;
-letter-spacing: 0.03em;
+.prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.old-price{
-position: relative;
-width: 185x;
-height: 41px;
-left: 1000px;
-top: 3px;
-
-font-weight: 500;
-font-size: 28px;
-line-height: 130%;
-
-letter-spacing: 0.03em;
-text-decoration-line: line-through;
-color: #8B8B8B;
+.new-price {
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
 }
 
-.discount{
-position: relative;
-width: 185px;
-height: 36px;
-left: 1040px;
-top: 3px;
+.old-price {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 130%;
 
-font-weight: 600;
-font-size: 28px;
-line-height: 130%;
-letter-spacing: 0.03em;
-color: #FF32A1;
+  letter-spacing: 0.03em;
+  text-decoration-line: line-through;
+  color: #8b8b8b;
 }
 
-.basket{
-position: relative;
-width: 397px;
-height: 100px;
-left: 945px;
-top: 1px;
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 25px 120px;
-gap: 10px;
-
-font-size: 28px;
-color: #ffffff;
-font-weight: 700;
-line-height: 130%;
-align-items: center;
-background: #339933;
-border: 2px solid #339933;
-border-radius: 10px;
-cursor: pointer;
-font-style: normal;
-width: 400px;
-height: 86px;
+.discount {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #ff32a1;
 }
 
-.description{
-position: relative;
-width: 113px;
-height: 36px;
-left: 945px;
-top: 30px;
+.basket {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 25px 120px;
+  gap: 10px;
 
-font-weight: 600;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0.03em;
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 130%;
+  align-items: center;
+  background: #339933;
+  border: 2px solid #339933;
+  border-radius: 10px;
+  cursor: pointer;
+  font-style: normal;
+  width: 400px;
+  height: 86px;
 }
 
-.product-description{
-position: relative;
-width: 412px;
-height: 156px;
-left: 945px;
-top: 40px;
-
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 130%;
-
-letter-spacing: 0.03em;
-
+.description {
+  margin-top: 25px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
 }
 
-.instrument-image{
-position: relative;
-width: 610px;
-height: 110px;
-left: 107px;
-top: 209px;
+.product-description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+
+  letter-spacing: 0.03em;
 }

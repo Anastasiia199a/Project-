@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Instruments.css';
 import { instruments as instrumentsArr } from '../../data/instruments';
 import { useNavigate } from 'react-router-dom';
+import { GardenContext } from '../../context/Context';
+import { addToCart } from '../../reducer/gardenReducer';
 
 function Instruments() {
+  const [, dispatch] = useContext(GardenContext);
   const [instruments, setInstruments] = useState(instrumentsArr);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
@@ -101,12 +104,20 @@ function Instruments() {
           <p>Не найдено ни одного товара по вашему критерию</p>
         ) : (
           instruments.map((instrument) => (
-            <div
-              key={instrument.id}
-              className="instrument-item"
-              onClick={() => navigate(`/instrument/${instrument.id}`)}
-            >
-              <img src={`/images/${instrument.image}`} alt={instrument.title} />
+            <div key={instrument.id} className="instrument-item">
+              <div className="instrument-image">
+                <img
+                  src={`/images/${instrument.image}`}
+                  alt={instrument.title}
+                  onClick={() => navigate(`/instrument/${instrument.id}`)}
+                />
+                <button
+                  onClick={() => dispatch(addToCart(instrument))}
+                  className="add-to-cart"
+                >
+                  Добавить в корзину
+                </button>
+              </div>
               <p>
                 <span className="new-price">{instrument.newPrice}</span>
                 <span className="old-price">
