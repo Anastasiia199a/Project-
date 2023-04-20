@@ -27,7 +27,10 @@ function Categories({ isShort }) {
           </button>
         )}
       </div>
-      <div className="categories-images">
+      <div
+        className="categories-images"
+        style={{ flexWrap: isShort ? 'nowrap' : 'wrap' }}
+      >
         {categories.map((category) => (
           <div
             key={category.id}

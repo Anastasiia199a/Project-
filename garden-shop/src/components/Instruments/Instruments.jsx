@@ -57,7 +57,7 @@ function Instruments() {
 
   return (
     <>
-      <h2>Инструменты и инвентарь</h2>
+      <h2 class="instruments-title">Инструменты и инвентарь</h2>
       <div className="navigation">
         <div className="range">
           <p className="price">Цена</p>
@@ -76,8 +76,8 @@ function Instruments() {
             onChange={(e) => setTo(e.target.value)}
           />
         </div>
-        <div className="discount">
-          <label htmlFor="discount">Товары со скидкой</label>
+        <div className="instruments-discount">
+          <p>Товары со скидкой</p>
           <input
             className="checkbox-discount"
             type="checkbox"
@@ -85,10 +85,11 @@ function Instruments() {
             value={discountFilter}
             onChange={(e) => setDiscountFilter(!discountFilter)}
           />
-          <p className="sort-item">Сортировать:</p>
         </div>
         <div className="sort">
+          <p className="sort-item">Сортировать:</p>
           <select
+            class="select-sort"
             name="product-sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}

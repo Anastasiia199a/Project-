@@ -9,12 +9,22 @@ import {
 import { GardenContext } from '../../context/Context';
 
 function CartProductItem({ cartItem }) {
-  const [count, setCount] = useState(cartItem.count);
+  let [count, setCount] = useState(cartItem.count);
   const [, dispatch] = useContext(GardenContext);
 
   function handleChange(e) {
     setCount(e.target.value);
     dispatch(setCountAction(Number(e.target.value)));
+  }
+
+  function decrement() {
+    setCount(--count);
+    dispatch(decrementCount(cartItem.id));
+  }
+
+  function increment() {
+    setCount(++count);
+    dispatch(incrementCount(cartItem.id));
   }
 
   return (
@@ -31,13 +41,9 @@ function CartProductItem({ cartItem }) {
       <div className="description">
         <p>{cartItem.description}</p>
         <div className="cart-item-count">
-          <button onClick={() => dispatch(decrementCount(cartItem.id))}>
-            -
-          </button>
+          <button onClick={decrement}>-</button>
           <input type="number" value={count} onChange={handleChange} />
-          <button onClick={() => dispatch(incrementCount(cartItem.id))}>
-            +
-          </button>
+          <button onClick={increment}>+</button>
         </div>
       </div>
       <div className="cart-item-prices">

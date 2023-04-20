@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer/Footer';
 import Categories from '../components/Categories/Categories';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { savePhoneNumber as savePhoneNumberAction } from '../reducer/gardenReducer';
+import { GardenContext } from '../context/Context';
 
- const notify = () =>
-  toast(`скидка оформлена`, {
+const notify = () =>
+  toast(`📱 скидка оформлена`, {
     position: 'top-right',
-    type: 'success',
+    type: 'default',
     theme: 'light',
     autoClose: 5000,
     closeOnClick: true,
     draggable: true,
-    pauseOnHover: true
+    pauseOnHover: true,
   });
-  
-function Home() {
-  function handleAddToCart() {
-    notify();
-  }
-  return (
 
+function Home() {
+  const [, dispatch] = useContext(GardenContext);
+  const [phone, setPhone] = useState('');
+
+  function savePhoneNumber() {
+    dispatch(savePhoneNumberAction(phone));
+    notify();
+    setPhone('');
+  }
+
+  return (
     <>
       <section className="header-wrapper">
         <Header />
@@ -49,15 +55,16 @@ function Home() {
           <div className="advertising-info" id="kupons">
             <h1>Скидка 5%</h1>
             <h2>на первый заказ</h2>
-            <input type="text" placeholder="+380" />
-            <button  onClick={handleAddToCart}
-
-            >Получить скидку</button>
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              type="number"
+              placeholder="+380"
+            />
+            <button onClick={savePhoneNumber}>Получить скидку</button>
           </div>
         </div>
       </section>
-
-
 
       <section id="shares" className="shares-wrapper">
         <div className="shares-header">

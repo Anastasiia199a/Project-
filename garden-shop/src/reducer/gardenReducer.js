@@ -1,6 +1,7 @@
 export const initialState = {
   cart: [],
   totalPrice: 0,
+  phone: '',
 };
 
 const ADD_TO_CART = '[CART] ADD TO CART';
@@ -8,6 +9,8 @@ const DELETE_FROM_CART = '[CART] DELETE FROM CART';
 const INCREMENT_COUNT = '[CART] INCREMENT COUNT';
 const DECREMENT_COUNT = '[CART] DECREMENT COUNT';
 const SET_COUNT = '[CART] SET COUNT';
+const SAVE_NUMBER = '[CART] SAVE PHONE NUMBER';
+const CLEAR_CART = '[CART] CLEAR CART';
 
 export const addToCart = (instrument) => ({
   type: ADD_TO_CART,
@@ -32,6 +35,15 @@ export const decrementCount = (instrumentId) => ({
 export const setCount = (count) => ({
   type: SET_COUNT,
   payload: { count },
+});
+
+export const savePhoneNumber = (number) => ({
+  type: SAVE_NUMBER,
+  payload: { number },
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
 });
 
 export const gardenReducer = (state = initialState, action) => {
@@ -128,6 +140,18 @@ export const gardenReducer = (state = initialState, action) => {
         ...state,
         cart,
         totalPrice: calculateTotalPrice(cart),
+      };
+    }
+    case SAVE_NUMBER: {
+      return {
+        ...state,
+        phone: action.payload.number,
+      };
+    }
+    case CLEAR_CART: {
+      return {
+        ...state,
+        cart: [],
       };
     }
     default:
