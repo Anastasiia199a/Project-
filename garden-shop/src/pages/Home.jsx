@@ -3,9 +3,25 @@ import Header from '../components/Header';
 import Footer from '../components/Footer/Footer';
 import Categories from '../components/Categories/Categories';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
+ const notify = () =>
+  toast(`скидка оформлена`, {
+    position: 'top-right',
+    type: 'success',
+    theme: 'light',
+    autoClose: 5000,
+    closeOnClick: true,
+    draggable: true,
+    pauseOnHover: true
+  });
+  
 function Home() {
+  function handleAddToCart() {
+    notify();
+  }
   return (
+
     <>
       <section className="header-wrapper">
         <Header />
@@ -34,10 +50,14 @@ function Home() {
             <h1>Скидка 5%</h1>
             <h2>на первый заказ</h2>
             <input type="text" placeholder="+380" />
-            <button>Получить скидку</button>
+            <button  onClick={handleAddToCart}
+
+            >Получить скидку</button>
           </div>
         </div>
       </section>
+
+
 
       <section id="shares" className="shares-wrapper">
         <div className="shares-header">

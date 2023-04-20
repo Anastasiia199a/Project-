@@ -12,7 +12,7 @@ const notify = (instrumentName) =>
     autoClose: 5000,
     closeOnClick: true,
     draggable: true,
-    pauseOnHover: true,
+    pauseOnHover: true
   });
 
 function InstrumentItem({ instrument }) {
