@@ -15,12 +15,11 @@
 .instrument-item {
   cursor: pointer;
   flex: 1 1 25%;
-}
-
-.instrument-image {
   position: relative;
 }
 
 .add-to-cart {
   position: absolute;
+  top: 20%;
+  cursor: pointer;
 }

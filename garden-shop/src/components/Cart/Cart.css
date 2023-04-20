@@ -1,8 +1,31 @@
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-list {
+  flex: 0 0 65%;
+}
+
+.cart-info {
+  flex: 0 0 30%;
+  margin-top: 62px;
+}
+
 .cart-item {
   position: relative;
   flex: 1 1 50%;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #a7a7a7;
+  padding: 15px;
+  align-items: center;
+}
+
+.cart-item-iamge img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .remove-item-icon {
@@ -10,55 +33,63 @@
   top: 10px;
   right: 0;
 }
-.cart-container{
-  border-bottom: 1px solid #A7A7A7;
-
+.cart-container {
+  border-bottom: 1px solid #a7a7a7;
 }
 
-.cart-header{
-font-weight: 700;
-font-size: 40px;
-line-height: 130%;
-letter-spacing: 0.03em;
-display: flex;
-margin: 20px;
+.cart-header {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  display: flex;
+  margin: 20px;
 }
 
-.breadcrumps{
-font-weight: 500;
-font-size: 16px;
-line-height: 130%;
-margin: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center
+.cart-breadcrumps {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #a7a7a7;
 }
 
-.breadcrumps p{
-font-weight: 500;
-font-size: 20px;
-line-height: 130%;
+.breadcrumps p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
 }
 
-.description{
-font-weight: 600;
-font-size: 15px;
-line-height: 130%;
-margin: 18px;
-letter-spacing: 0.03em;
+.description {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 130%;
+  margin: 18px;
+  letter-spacing: 0.03em;
 }
 
-.cart-item-count{
-box-sizing: border-box;
-width: 140px;
-height: 40px;
-left: 251px;
-top: 461px;
-border: 1px solid #000000;
-border-radius: 12px;
+.cart-item-count {
+  display: flex;
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 88px;
 }
 
-.cart-item-prices{
+.cart-item-count input {
+  width: 40px;
+  border: none;
+}
+
+.cart-item-count button {
+  background: transparent;
+  border: none;
+}
+
+.cart-item-prices {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,56 +97,49 @@ border-radius: 12px;
   border: 20px;
 }
 
-.new-price{
-font-weight: 600;
-font-size: 40px;
-line-height: 130%;
-margin-right: 30px;
-letter-spacing: 0.03em;
+.new-price {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 130%;
+  margin-right: 30px;
+  letter-spacing: 0.03em;
 }
 
-.old-price{
+.old-price {
   font-weight: 500;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0.03em;
-text-decoration-line: line-through;
-color: #8B8B8B;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-decoration-line: line-through;
+  color: #8b8b8b;
 }
 
-.cart-info{
-box-sizing: border-box;
-position: absolute;
-width: 496px;
-height: 393px;
-left: 914px;
-top: 298px;
-border: 2px solid #000000;
-border-radius: 21px;
+.cart-info {
+  border: 2px solid #000000;
+  border-radius: 21px;
 }
 
-.cart-info h4{
-top: 20px;
-margin: 20px;
-font-weight: 600;
-font-size: 28px;
-line-height: 130%;
+.cart-info h4 {
+  margin: 20px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
 
-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
 }
 
-.cart-info-sum{
+.cart-info-sum {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-font-size: 32px;
-line-height: 130%;
-letter-spacing: 0.03em;
-display: flex;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  display: flex;
   justify-content: flex-end;
 }
 
-.btn-order{
+.btn-order {
   font-size: 28px;
   color: #ffffff;
   font-weight: 700;
@@ -128,27 +152,23 @@ display: flex;
   font-style: normal;
   width: 400px;
   height: 86px;
-  
 }
 
-.phone-number{
+.phone-number {
   box-sizing: border-box;
   width: 446px;
   height: 73px;
   left: 939px;
   top: 492px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #000000;
   border-radius: 20px;
-  
+
   font-weight: 500;
   font-size: 18px;
   line-height: 130%;
   margin-top: 15px;
   letter-spacing: 0.03em;
-  
+
   color: #929292;
-  }
-
-
-
+}

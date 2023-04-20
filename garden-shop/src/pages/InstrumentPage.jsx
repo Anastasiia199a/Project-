@@ -24,7 +24,7 @@ function InstrumentPage() {
             <img src={`/images/${product.image}`} alt={product.title} />
           </div>
           <div className="instrument-contnet">
-            <div class="prices">
+            <div className="prices">
               <p className="new-price">{product.newPrice}</p>
               <p className="old-price">
                 {product.oldPrice ? '$' : ''}
@@ -41,7 +41,7 @@ function InstrumentPage() {
             >
               В корзину
             </button>
-            <p className="description">Описание</p>
+            <p className="instrument-description">Описание</p>
             <p className="product-description">{product.description}</p>
           </div>
         </div>

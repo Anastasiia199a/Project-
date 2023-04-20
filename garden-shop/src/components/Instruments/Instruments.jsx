@@ -1,18 +1,14 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Instruments.css';
 import { instruments as instrumentsArr } from '../../data/instruments';
-import { useNavigate } from 'react-router-dom';
-import { GardenContext } from '../../context/Context';
-import { addToCart } from '../../reducer/gardenReducer';
+import InstrumentItem from './InstrumentItem';
 
 function Instruments() {
-  const [, dispatch] = useContext(GardenContext);
   const [instruments, setInstruments] = useState(instrumentsArr);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [discountFilter, setDiscountFilter] = useState(false);
   const [sort, setSort] = useState('default');
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!from && !to) {
@@ -64,14 +60,16 @@ function Instruments() {
       <h2>Инструменты и инвентарь</h2>
       <div className="navigation">
         <div className="range">
-          <p className='price'>Цена</p>
-          <input className='navigation-from'
+          <p className="price">Цена</p>
+          <input
+            className="navigation-from"
             type="text"
             placeholder="от"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
           />
-          <input className='navigation-to'
+          <input
+            className="navigation-to"
             type="text"
             placeholder="до"
             value={to}
@@ -80,13 +78,14 @@ function Instruments() {
         </div>
         <div className="discount">
           <label htmlFor="discount">Товары со скидкой</label>
-          <input className='checkbox-discount'
+          <input
+            className="checkbox-discount"
             type="checkbox"
             id="discount"
             value={discountFilter}
             onChange={(e) => setDiscountFilter(!discountFilter)}
           />
-           <p className='sort-item'>Сортировать:</p>
+          <p className="sort-item">Сортировать:</p>
         </div>
         <div className="sort">
           <select
@@ -105,33 +104,7 @@ function Instruments() {
           <p>Не найдено ни одного товара по вашему критерию</p>
         ) : (
           instruments.map((instrument) => (
-            <div key={instrument.id} className="instrument-item">
-              <div className="instrument-image">
-                <img
-                  src={`/images/${instrument.image}`}
-                  alt={instrument.title}
-                  onClick={() => navigate(`/instrument/${instrument.id}`)}
-                />
-                <button
-                  onClick={() => dispatch(addToCart(instrument))}
-                  className="add-to-cart"
-                >
-                  Добавить в корзину
-                </button>
-              </div>
-              <p>
-                <span className="new-price">{instrument.newPrice}</span>
-                <span className="old-price">
-                  {instrument.oldPrice ? '$' : ''}
-                  {instrument.oldPrice}
-                </span>
-                <span className="discount">
-                  {instrument.discount}
-                  {instrument.discount ? '%' : ''}
-                </span>
-              </p>
-              <p>{instrument.title}</p>
-            </div>
+            <InstrumentItem key={instrument.id} instrument={instrument} />
           ))
         )}
       </div>
