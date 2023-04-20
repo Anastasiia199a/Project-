@@ -35,8 +35,8 @@ function Cart() {
             <p>Cумма</p>
             <p>{totalPrice}</p>
             <form onSubmit={handleOnSubmit}>
-              <input type="number" placeholder="Ваш номер телефона" />
-              <button type="submit">Заказать</button>
+              <input className='phone-number' type="number" placeholder="Ваш номер телефона" />
+              <button className='btn-order' type="submit">Заказать</button>
             </form>
           </div>
         </div>

@@ -64,14 +64,14 @@ function Instruments() {
       <h2>Инструменты и инвентарь</h2>
       <div className="navigation">
         <div className="range">
-          <p>Цена</p>
-          <input
+          <p className='price'>Цена</p>
+          <input className='navigation-from'
             type="text"
             placeholder="от"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
           />
-          <input
+          <input className='navigation-to'
             type="text"
             placeholder="до"
             value={to}
@@ -80,12 +80,13 @@ function Instruments() {
         </div>
         <div className="discount">
           <label htmlFor="discount">Товары со скидкой</label>
-          <input
+          <input className='checkbox-discount'
             type="checkbox"
             id="discount"
             value={discountFilter}
             onChange={(e) => setDiscountFilter(!discountFilter)}
           />
+           <p className='sort-item'>Сортировать:</p>
         </div>
         <div className="sort">
           <select
