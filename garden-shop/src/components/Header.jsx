@@ -13,22 +13,22 @@ function Header() {
           alt="logo"
         />
         <button onClick={() => navigate(`/instruments`)} className="catalog">
-          Каталог
+          Catalog
         </button>
       </div>
       <div className="menu-wrapper">
         <ul className="menu">
           <li>
-            <a href="#category">Категории</a>
+            <a href="#category">Categoties</a>
           </li>
           <li>
-            <a href="#kupons">Купоны</a>
+            <a href="#kupons">Kupons</a>
           </li>
           <li>
-            <a href="#shares">Акции</a>
+            <a href="#shares">Shares</a>
           </li>
           <li>
-            <a href="#contacts">Контакты</a>
+            <a href="#contacts">Contacts</a>
           </li>
         </ul>
         <Link to="/cart">

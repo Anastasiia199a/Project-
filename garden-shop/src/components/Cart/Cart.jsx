@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import { sendOrder } from '../../API/categories_api';
 
 const notify = () =>
-  toast('Заказ в обработке! Спасибо!', {
+  toast('Order processing! Thank you!', {
     position: 'top-center',
     type: 'default',
     theme: 'light',
@@ -36,27 +36,27 @@ function Cart() {
   return (
     <div className="cart-container">
       <div className="cart-header">
-        <h3>Корзина</h3>
+        <h3>Cart</h3>
       </div>
       {!cart.length ? (
-        <p>Нет товаров в корзине</p>
+        <p>No products in the cart</p>
       ) : (
         <div className="cart-content">
           <div className="cart-list">
             <div className="cart-breadcrumps">
               <p>
-                <Link to="/home">Главная</Link> / Корзина
+                <Link to="/home">Home</Link> / Cart
               </p>
               <p>
-                <Link to="/instruments">Вернуться в магазин {'>'}</Link>
+                <Link to="/instruments">Back to the shop {'>'}</Link>
               </p>
             </div>
             <CartProducts />
           </div>
           <div className="cart-info">
-            <h4>Детали заказа</h4>
+            <h4>Order details</h4>
             <div className="cart-info-sum">
-              <p className="total-price-desc">Cумма</p>
+              <p className="total-price-desc">Price</p>
               <p className="total-price">${totalPrice}</p>
             </div>
             <form onSubmit={handleOnSubmit}>
@@ -65,10 +65,10 @@ function Cart() {
                 type="number"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder="Ваш номер телефона"
+                placeholder="Phone number"
               />
               <button className="btn-order" type="submit">
-                Заказать
+                Order
               </button>
             </form>
           </div>

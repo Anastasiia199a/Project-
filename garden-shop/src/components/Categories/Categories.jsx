@@ -24,10 +24,10 @@ function Categories({ isShort }) {
   return (
     <div className="categories">
       <div className="categories-header">
-        <h2>Категории</h2>
+        <h2>Categories</h2>
         {isShort && (
           <button onClick={handleNavigate} className="categories-btn">
-            Все категории
+            All categories
           </button>
         )}
       </div>

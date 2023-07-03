@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { getDiscount } from '../../utils/getDiscount';
 
 const notify = (instrumentName) =>
-  toast(`${instrumentName} успешно добавлены в корзину`, {
+  toast(`${instrumentName} added to cart`, {
     position: 'top-right',
     type: 'success',
     theme: 'light',

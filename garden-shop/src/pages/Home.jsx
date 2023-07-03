@@ -8,7 +8,7 @@ import { GardenContext } from '../context/Context';
 import { sendSale } from '../API/categories_api';
 
 const notify = () =>
-  toast(`📱 скидка оформлена`, {
+  toast(`📱 added sale`, {
     position: 'top-right',
     type: 'default',
     theme: 'light',
@@ -36,11 +36,11 @@ function Home() {
         <Header />
         <div className="banner">
           <div className="info">
-            <h1>Распродажа</h1>
-            <h2>в честь нового сезона</h2>
+            <h1>Sale</h1>
+            <h2>in the new season</h2>
             <div className="actions">
-              <button className="all">Все акции</button>
-              <button className="additional">Подробнее</button>
+              <button className="all">All promotions</button>
+              <button className="additional">More</button>
             </div>
           </div>
           <div className="image">
@@ -56,22 +56,22 @@ function Home() {
             <img src="./images/dwarf.png" alt="dwarf" />
           </div>
           <div className="advertising-info" id="kupons">
-            <h1>Скидка 5%</h1>
-            <h2>на первый заказ</h2>
+            <h1>Sale 5%</h1>
+            <h2>for the first order</h2>
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               type="number"
               placeholder="+380"
             />
-            <button onClick={savePhoneNumber}>Получить скидку</button>
+            <button onClick={savePhoneNumber}>Get a discount</button>
           </div>
         </div>
       </section>
 
       <section id="shares" className="shares-wrapper">
         <div className="shares-header">
-          <h2>Акции</h2>
+          <h2>Sales</h2>
         </div>
         <div className="shares-images">
           <div className="shares-item">
@@ -81,7 +81,7 @@ function Home() {
               <span className="old-price">1540$</span>
               <span className="discount">-7%</span>
             </p>
-            <p>Мостик декоративный кованый</p>
+            <p>Decorative forged bridge</p>
           </div>
           <div className="shares-item">
             <img src="./images/home_2.png" alt="flowers" />
@@ -90,7 +90,7 @@ function Home() {
               <span className="old-price">170$</span>
               <span className="discount">-7%</span>
             </p>
-            <p>Корзина с цветами</p>
+            <p>Bascet with flowers</p>
           </div>
           <div className="shares-item">
             <img src="./images/home_3.png" alt="castle" />
@@ -99,7 +99,7 @@ function Home() {
               <span className="old-price">71$</span>
               <span className="discount">-7%</span>
             </p>
-            <p>Замок для аквариума</p>
+            <p>Aquarium palace</p>
           </div>
         </div>
         <Footer />

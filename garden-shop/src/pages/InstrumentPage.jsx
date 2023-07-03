@@ -54,9 +54,9 @@ function InstrumentPage() {
               className="basket"
               onClick={() => dispatch(addToCart(product))}
             >
-              В корзину
+              Add to cart
             </button>
-            <p className="instrument-description">Описание</p>
+            <p className="instrument-description">Description</p>
             <p className="product-description">{product.description}</p>
           </div>
         </div>

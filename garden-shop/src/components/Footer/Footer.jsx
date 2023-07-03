@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="footer" id="contacts">
       <div className="contacts">
-        <h2 className="contacts-title">Контакты</h2>
+        <h2 className="contacts-title">Contacts</h2>
         <h3 className="phone">+38 096 352 67 70</h3>
 
         <div className="social-networks">
@@ -20,10 +20,10 @@ function Footer() {
         </div>
       </div>
       <div className="contacts-info">
-        <h2 className="adress-title">Адрес</h2>
-        <p className="adress">г. Киев, ул. Крещатик, 73</p>
-        <p className="work-schedule-title">Режим работы</p>
-        <p className="work-schedule">Круглосуточно</p>
+        <h2 className="adress-title">Address</h2>
+        <p className="adress">Kiyv, Khreschatyk, 73</p>
+        <p className="work-schedule-title">We are working</p>
+        <p className="work-schedule">Day and night</p>
       </div>
     </div>
   );

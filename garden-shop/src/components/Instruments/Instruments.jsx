@@ -65,10 +65,10 @@ function Instruments() {
 
   return (
     <>
-      <h2 className="instruments-title">Инструменты и инвентарь</h2>
+      <h2 className="instruments-title">Instruments and inventory</h2>
       <div className="navigation">
         <div className="range">
-          <p className="price">Цена</p>
+          <p className="price">Price</p>
           <input
             className="navigation-from"
             type="text"
@@ -85,7 +85,7 @@ function Instruments() {
           />
         </div>
         <div className="instruments-discount">
-          <p>Товары со скидкой</p>
+          <p>Discounted products</p>
           <input
             className="checkbox-discount"
             type="checkbox"
@@ -95,22 +95,22 @@ function Instruments() {
           />
         </div>
         <div className="sort">
-          <p className="sort-item">Сортировать:</p>
+          <p className="sort-item">Sort:</p>
           <select
             className="select-sort"
             name="product-sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
           >
-            <option value="default">по умолчанию</option>
-            <option value="az">от А до Я</option>
-            <option value="za">от Я до А</option>
+            <option value="default">Default</option>
+            <option value="az">from A to Z</option>
+            <option value="za">from Z to A</option>
           </select>
         </div>
       </div>
       <div className="instruments">
         {!filteredInstruments.length ? (
-          <p>Не найдено ни одного товара по вашему критерию</p>
+          <p>Not found</p>
         ) : (
           filteredInstruments.map((instrument) => (
             <InstrumentItem key={instrument.id} instrument={instrument} />
