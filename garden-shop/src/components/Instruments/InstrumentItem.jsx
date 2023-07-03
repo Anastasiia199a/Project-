@@ -44,7 +44,7 @@ function InstrumentItem({ instrument }) {
           onClick={handleAddToCart}
           className="add-to-cart"
         >
-          Добавить в корзину
+          Add to cart
         </button>
       </div>
       <p>
