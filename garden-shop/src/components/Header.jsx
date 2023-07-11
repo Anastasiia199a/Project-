@@ -13,7 +13,7 @@ function Header() {
           alt="logo"
         />
         <button onClick={() => navigate(`/instruments`)} className="catalog">
-          Catalog
+          Cataloge
         </button>
       </div>
       <div className="menu-wrapper">
@@ -22,7 +22,7 @@ function Header() {
             <a href="#category">Categoties</a>
           </li>
           <li>
-            <a href="#kupons">Kupons</a>
+            <a href="#kupons">Coupons</a>
           </li>
           <li>
             <a href="#shares">Shares</a>
